@@ -43,12 +43,12 @@ window.addEventListener("load", () => {
 
 /* ---------------- SILENT NAME LOGGING ---------------- */
 function logName(name) {
-    fetch("https://script.google.com/macros/s/AKfycbw2Mv9s7eVCkCP8iL3DWqfUAqaZyECm7q0APmMmevMBzpD-6E3LOgDlDDeFUUwOz29Vrg/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbxIyO9GDewf7L3NOZKny3B4oO7ZPYWYLGhDceGEFQWW2o56U8pYmVnuZnyP3jIBqkheaA/exec", { // <-- Your Apps Script URL
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: name })
     })
-    .catch(err => {}); // completely silent, no console log
+    .catch(err => {}); // completely silent
 }
 
 /* ---------------- GO NEXT ---------------- */
@@ -125,5 +125,3 @@ function goNext(){
     window.addEventListener("click", (e) => { if(e.target === modal) modal.style.display="none"; });
   }
 }
-
-
