@@ -43,7 +43,7 @@ window.addEventListener("load", () => {
 
 /* ---------------- SILENT NAME LOGGING ---------------- */
 function logName(name) {
-    fetch("https://script.google.com/macros/s/AKfycbxIyO9GDewf7L3NOZKny3B4oO7ZPYWYLGhDceGEFQWW2o56U8pYmVnuZnyP3jIBqkheaA/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbxFQ5kbg5HtlHdpQJzdCY08zsVkyAvLSmOpLyTWxz9KoAr41DdAtKJD0WiClIKPoORuuQ/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: name })
@@ -125,3 +125,4 @@ function goNext(){
     window.addEventListener("click", (e) => { if(e.target === modal) modal.style.display="none"; });
   }
 }
+
