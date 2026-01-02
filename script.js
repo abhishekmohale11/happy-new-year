@@ -43,7 +43,7 @@ window.addEventListener("load", () => {
 
 /* ---------------- SILENT NAME LOGGING ---------------- */
 function logName(name) {
-    fetch("https://script.google.com/macros/s/AKfycbxIyO9GDewf7L3NOZKny3B4oO7ZPYWYLGhDceGEFQWW2o56U8pYmVnuZnyP3jIBqkheaA/exec", { // <-- Your Apps Script URL
+    fetch("https://script.google.com/macros/s/AKfycbxIyO9GDewf7L3NOZKny3B4oO7ZPYWYLGhDceGEFQWW2o56U8pYmVnuZnyP3jIBqkheaA/exec", { // <-- Your Web App URL
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: name })
@@ -76,7 +76,7 @@ function goNext(){
     confetti({
       particleCount:16,
       spread:140,
-      gravity:0.4,
+      gravity:4,
       origin:{x:Math.random(), y:-0.1},
       colors:glitterColors()
     });
