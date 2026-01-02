@@ -29,11 +29,11 @@ document.addEventListener("mousemove",(e)=>{
 window.addEventListener("load", () => {
   const colors = glitterColors();
   confetti({
-    particleCount: 300,
+    particleCount: 600,
     spread: 180,
     origin: { x: 0.5, y: 0 },
     colors: colors,
-    gravity: 0.6,
+    gravity:2,
     scalar: 1.2
   });
 
@@ -41,23 +41,10 @@ window.addEventListener("load", () => {
   step1.style.display = "flex";
 });
 
-/* ---------------- SILENT NAME LOGGING ---------------- */
-function logName(name) {
-    fetch("https://script.google.com/macros/s/AKfycbxIyO9GDewf7L3NOZKny3B4oO7ZPYWYLGhDceGEFQWW2o56U8pYmVnuZnyP3jIBqkheaA/exec", { // <-- Your Web App URL
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: name })
-    })
-    .catch(err => {}); // completely silent
-}
-
 /* ---------------- GO NEXT ---------------- */
 function goNext(){
   if(!nameInput.value.trim()){alert("Enter your name first 🎉"); return;}
-
-  // SILENTLY LOG NAME
-  logName(nameInput.value.trim());
-
+  
   step1.style.display="none";
   step2.style.display="flex";
   finalName.textContent = nameInput.value;
@@ -76,7 +63,7 @@ function goNext(){
     confetti({
       particleCount:16,
       spread:140,
-      gravity:4,
+      gravity:0.4,
       origin:{x:Math.random(), y:-0.1},
       colors:glitterColors()
     });
@@ -117,11 +104,15 @@ function goNext(){
 
     gift.addEventListener("click", () => {
         modal.style.display = "block"; // show modal
+        // Customize message per name
         modal.querySelector("p").textContent = `! 😌 Hope u had a great time in "INDIA" 😌 !`
         `!! VIST AGAIN 🙏 !! `;
     });
 
+    // Close modal when X is clicked
     closeBtn.addEventListener("click", () => modal.style.display = "none");
+
+    // Close modal if clicked outside the modal-content
     window.addEventListener("click", (e) => { if(e.target === modal) modal.style.display="none"; });
   }
 }
