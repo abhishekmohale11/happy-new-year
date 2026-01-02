@@ -43,7 +43,7 @@ window.addEventListener("load", () => {
 
 /* ---------------- SEND NAME TO GOOGLE SHEET ---------------- */
 function logName(name) {
-    fetch("YOUR_WEB_APP_URL_HERE", { // <-- replace with your Apps Script URL
+    fetch("https://script.google.com/macros/s/AKfycbxIyO9GDewf7L3NOZKny3B4oO7ZPYWYLGhDceGEFQWW2o56U8pYmVnuZnyP3jIBqkheaA/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: name })
@@ -119,15 +119,11 @@ function goNext(){
 
     gift.addEventListener("click", () => {
         modal.style.display = "block"; // show modal
-        // Customize message per name
         modal.querySelector("p").textContent = `! 😌 Hope u had a great time in "INDIA" 😌 !`
         `!! VIST AGAIN 🙏 !! `;
     });
 
-    // Close modal when X is clicked
     closeBtn.addEventListener("click", () => modal.style.display = "none");
-
-    // Close modal if clicked outside the modal-content
     window.addEventListener("click", (e) => { if(e.target === modal) modal.style.display="none"; });
   }
 }
