@@ -90,7 +90,7 @@ function goNext(){
   }, 400); // delay so greeting appears first
 
   // ---------------- GIFT BOX for specific names ----------------
-  const giftNames = ["shloka", "Vihan"]; // add more names here
+  const giftNames = ["shloka", "vihan"]; // add more names here
   const enteredName = nameInput.value.trim().toLowerCase();
 
   if(giftNames.includes(enteredName)) {
@@ -116,3 +116,4 @@ function goNext(){
     window.addEventListener("click", (e) => { if(e.target === modal) modal.style.display="none"; });
   }
 }
+
