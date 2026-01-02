@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy New Year</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Confetti library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background blobs -->
+  <div class="bg">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="container">
+
+    <!-- Step 1: Name input -->
+    <div id="step1" class="page" style="display:none;">
+      <h2>🎊 Enter Your Name 🎊</h2>
+      <input type="text" id="nameInput" placeholder="Your name">
+      <br>
+      <button onclick="goNext()">Next</button>
+    </div>
+
+    <!-- Step 2: Greeting -->
+    <div id="step2" class="page" style="display:none; flex-direction: column;">
+      <h1>🎉 Happy New Year <span id="finalName"></span> 🎉</h1>
+
+      <!-- Message Box -->
+      <div class="message-box" id="msgBox">
+        <p>
+          Wish you a very happy new year! May this year bring happiness and success to your life.<br>
+          Stay happy and healthy!
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Pop Sound (optional, no autoplay) -->
+  <audio id="popSound" preload="auto">
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_8c9c8b1b4c.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Gift Modal -->
+  <div id="giftModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal">&times;</span>
+      <h2>🎁 Surprise!</h2>
+      <p>! 😌 Hope u had a great time in "INDIA" 😌 !<br>!! VIST AGAIN 🙏 !! </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
