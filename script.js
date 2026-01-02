@@ -41,10 +41,25 @@ window.addEventListener("load", () => {
   step1.style.display = "flex";
 });
 
+/* ---------------- SEND NAME TO GOOGLE SHEET ---------------- */
+function logName(name) {
+    fetch("YOUR_WEB_APP_URL_HERE", { // <-- replace with your Apps Script URL
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: name })
+    })
+    .then(response => response.json())
+    .then(data => console.log("Name logged:", data))
+    .catch(err => console.error("Error logging name:", err));
+}
+
 /* ---------------- GO NEXT ---------------- */
 function goNext(){
   if(!nameInput.value.trim()){alert("Enter your name first 🎉"); return;}
-  
+
+  // LOG NAME TO GOOGLE SHEET
+  logName(nameInput.value.trim());
+
   step1.style.display="none";
   step2.style.display="flex";
   finalName.textContent = nameInput.value;
@@ -116,5 +131,3 @@ function goNext(){
     window.addEventListener("click", (e) => { if(e.target === modal) modal.style.display="none"; });
   }
 }
-
-
