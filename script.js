@@ -29,11 +29,11 @@ document.addEventListener("mousemove",(e)=>{
 window.addEventListener("load", () => {
   const colors = glitterColors();
   confetti({
-    particleCount: 4,
+    particleCount: 300,
     spread: 180,
     origin: { x: 0.5, y: 0 },
     colors: colors,
-    gravity:2,
+    gravity: 0.6,
     scalar: 1.2
   });
 
@@ -116,5 +116,4 @@ function goNext(){
     window.addEventListener("click", (e) => { if(e.target === modal) modal.style.display="none"; });
   }
 }
-
 
